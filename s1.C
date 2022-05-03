@@ -1,5 +1,5 @@
 {
-  const double s1_r1 = 28/2.0;
+  const double s1_r1 = 48/2.0;
   const double s1_r2 = 96/2.0;  
   
   // Rear histogram
@@ -22,22 +22,22 @@
     theta_end = (s1r_i+1)*dtheta1r;    
 
     i=0;
-    s1r_x[i] = s1_r1*sin(theta_start);
-    s1r_y[i] = s1_r1*cos(theta_start);    
+    s1r_x[i] = s1_r1*cos(theta_start);
+    s1r_y[i] = s1_r1*sin(theta_start);    
 
     // outer circle
     tmp_theta = theta_start;
     for(i=1; i<=10; i++){
-      s1r_x[i] = s1_r2*sin(tmp_theta);
-      s1r_y[i] = s1_r2*cos(tmp_theta);      
+      s1r_x[i] = s1_r2*cos(tmp_theta);
+      s1r_y[i] = s1_r2*sin(tmp_theta);      
       tmp_theta += dtheta2r;
     }
 
     // inner circle
     tmp_theta = theta_end;
     for(i=11; i<20; i++){
-      s1r_x[i] = s1_r1*sin(tmp_theta);
-      s1r_y[i] = s1_r1*cos(tmp_theta);      
+      s1r_x[i] = s1_r1*cos(tmp_theta);
+      s1r_y[i] = s1_r1*sin(tmp_theta);      
       tmp_theta -= dtheta2r;
     }
     
@@ -69,21 +69,21 @@
       r_end = s1_r1 + (s1f_j+1)*dr;      
       
       i=0;
-      s1f_x[i] = r_start*sin(theta_start);
-      s1f_y[i] = r_start*cos(theta_start);    
+      s1f_x[i] = r_start*cos(theta_start);
+      s1f_y[i] = r_start*sin(theta_start);    
       
       tmp_theta = theta_start;
       for(i=1; i<=40; i++){
-	s1f_x[i] = r_end*sin(tmp_theta);
-	s1f_y[i] = r_end*cos(tmp_theta);    	
+	s1f_x[i] = r_end*cos(tmp_theta);
+	s1f_y[i] = r_end*sin(tmp_theta);    	
 	tmp_theta += dtheta2f;
       }
       
       // inner circle
       tmp_theta = theta_end;
       for(i=41; i<80; i++){
-	s1f_x[i] = r_start*sin(tmp_theta);
-	s1f_y[i] = r_start*cos(tmp_theta);      
+	s1f_x[i] = r_start*cos(tmp_theta);
+	s1f_y[i] = r_start*sin(tmp_theta);      
 	tmp_theta -= dtheta2f;
       }
       
@@ -112,21 +112,21 @@
       r_end = s1_r1 + (s1m_j+1)*dr;      
 
       i=0;
-      s1m_x[i] = r_start*sin(theta_start);
-      s1m_y[i] = r_start*cos(theta_start);    
+      s1m_x[i] = r_start*cos(theta_start);
+      s1m_y[i] = r_start*sin(theta_start);    
       
       tmp_theta = theta_start;
       for(i=1; i<=10; i++){
-	s1m_x[i] = r_end*sin(tmp_theta);
-	s1m_y[i] = r_end*cos(tmp_theta);      
+	s1m_x[i] = r_end*cos(tmp_theta);
+	s1m_y[i] = r_end*sin(tmp_theta);      
 	tmp_theta += dtheta2m;
       }
 
       // inner circle
       tmp_theta = theta_end;
       for(i=11; i<20; i++){
-	s1m_x[i] = r_start*sin(tmp_theta);
-	s1m_y[i] = r_start*cos(tmp_theta);      
+	s1m_x[i] = r_start*cos(tmp_theta);
+	s1m_y[i] = r_start*sin(tmp_theta);      
 	tmp_theta -= dtheta2m;
       }
       
